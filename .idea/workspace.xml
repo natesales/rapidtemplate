@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="987c566b-31f1-4f81-a2c7-f0e3a1c2b72c" name="Default Changelist" comment="" />
+    <list default="true" id="987c566b-31f1-4f81-a2c7-f0e3a1c2b72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rapidtemplate.go" beforeDir="false" afterPath="$PROJECT_DIR$/rapidtemplate.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +21,11 @@
     </option>
   </component>
   <component name="GOROOT" path="$USER_HOME$/sdk/go1.14.1" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZlyVxtENHCJDTREcvNp5rbp8Yd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,6 +33,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
@@ -44,9 +55,17 @@
       <screen x="0" y="24" width="2560" height="1416" />
     </state>
     <state x="875" y="393" width="800" height="675" key="#GOROOT/0.24.2560.1416/2560.0.1920.1080@0.24.2560.1416" timestamp="1585428023744" />
+    <state x="851" y="242" width="848" height="978" key="CommitChangelistDialog2" timestamp="1585451862428">
+      <screen x="0" y="24" width="2560" height="1416" />
+    </state>
+    <state x="851" y="242" width="848" height="978" key="CommitChangelistDialog2/0.24.2560.1416/2560.0.1920.1080@0.24.2560.1416" timestamp="1585451862428" />
     <state x="961" y="514" key="SettingsEditor" timestamp="1585428130023">
       <screen x="0" y="24" width="2560" height="1416" />
     </state>
     <state x="961" y="514" key="SettingsEditor/0.24.2560.1416/2560.0.1920.1080@0.24.2560.1416" timestamp="1585428130023" />
+    <state x="943" y="347" width="672" height="678" key="search.everywhere.popup" timestamp="1585451486438">
+      <screen x="0" y="24" width="2560" height="1416" />
+    </state>
+    <state x="943" y="347" width="672" height="678" key="search.everywhere.popup/0.24.2560.1416/2560.0.1920.1080@0.24.2560.1416" timestamp="1585451486438" />
   </component>
 </project>

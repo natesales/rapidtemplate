@@ -12,10 +12,23 @@ import (
 	"github.com/gomarkdown/markdown/parser"
 )
 
+// Configuration constants
 const (
 	PagesDirectory  = "pages/"     // Directory where the markdown pages are located
 	OutputDirectory = "out/"       // Output directory for the HTML files and static assets. This should be your webserver root directory.
 	TemplateString  = "{{ post }}" // The string to replace in your template file
+)
+
+// CLI Usage information
+const (
+	Usage    = "Usage: rapidtemplate [run/generate/clean]"
+	HelpPage = `RapidTemplate (https://github.com/natesales/rapidtemplate)
+Usage: rapidtemplate [run/generate/clean]
+
+Commands:
+	run      - Build all files and listen for changes 
+	generate - Build all files and exit
+	clean    - Clean previously built HTML files`
 )
 
 // File change operation watcher
@@ -108,37 +121,60 @@ func watchDir(path string, fi os.FileInfo, err error) error {
 }
 
 func main() {
-	// Remove old HTML pages
-	clean()
+	var command string
 
-	// Create file change listener
-	watcher, _ = fsnotify.NewWatcher()
-	defer watcher.Close()
-
-	// Enumerate (walk) the PagesDirectory to find files
-	if err := filepath.Walk(PagesDirectory, watchDir); err != nil {
-		fmt.Println("ERROR", err)
+	if len(os.Args) != 2 {
+		fmt.Println(Usage)
+		os.Exit(0)
+	} else {
+		command = os.Args[1]
 	}
 
-	// Blocking channel to allow fsnotify to catch filesystem events
-	done := make(chan bool)
+	switch command {
+	case "run":
+		// Remove old HTML pages
+		clean()
 
-	// gorountine for fsnotify
-	go func() {
-		for {
-			select {
-			// watch for events
-			case event := <-watcher.Events:
-				if isMarkdownFile(event.Name) {
-					update(event.Name)
+		// Create file change listener
+		watcher, _ = fsnotify.NewWatcher()
+		defer watcher.Close()
+
+		// Enumerate (walk) the PagesDirectory to find files
+		err := filepath.Walk(PagesDirectory, watchDir)
+		handle(err)
+
+		// Blocking channel to allow fsnotify to catch filesystem events
+		done := make(chan bool)
+
+		// gorountine for fsnotify
+		go func() {
+			for {
+				select {
+				// watch for events
+				case event := <-watcher.Events:
+					if isMarkdownFile(event.Name) {
+						update(event.Name)
+					}
+
+					// watch for errors
+				case err := <-watcher.Errors:
+					fmt.Println("ERROR", err)
 				}
-
-				// watch for errors
-			case err := <-watcher.Errors:
-				fmt.Println("ERROR", err)
 			}
-		}
-	}()
+		}()
 
-	<-done // Endless blocking channel
+		<-done // Endless blocking channel
+	case "clean":
+		clean()
+		fmt.Println("Done")
+	case "generate":
+		watcher, _ = fsnotify.NewWatcher()
+		defer watcher.Close()
+
+		err := filepath.Walk(PagesDirectory, watchDir)
+		handle(err)
+	default:
+		fmt.Println("Command \"" + command + "\" not found")
+		fmt.Println(HelpPage)
+	}
 }
