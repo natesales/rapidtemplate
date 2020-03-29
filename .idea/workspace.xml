@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="987c566b-31f1-4f81-a2c7-f0e3a1c2b72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rapidtemplate.go" beforeDir="false" afterPath="$PROJECT_DIR$/rapidtemplate.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +43,12 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add binary to gitignore" />
+    <MESSAGE value="Update Makefile to include build" />
+    <MESSAGE value="Create better CLI utility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create better CLI utility" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="875" y="393" width="800" height="675" key="#GOPATH" timestamp="1585428028320">
       <screen x="0" y="24" width="2560" height="1416" />
@@ -55,10 +58,10 @@
       <screen x="0" y="24" width="2560" height="1416" />
     </state>
     <state x="875" y="393" width="800" height="675" key="#GOROOT/0.24.2560.1416/2560.0.1920.1080@0.24.2560.1416" timestamp="1585428023744" />
-    <state x="851" y="242" width="848" height="978" key="CommitChangelistDialog2" timestamp="1585451862428">
+    <state x="851" y="242" width="848" height="978" key="CommitChangelistDialog2" timestamp="1585451875707">
       <screen x="0" y="24" width="2560" height="1416" />
     </state>
-    <state x="851" y="242" width="848" height="978" key="CommitChangelistDialog2/0.24.2560.1416/2560.0.1920.1080@0.24.2560.1416" timestamp="1585451862428" />
+    <state x="851" y="242" width="848" height="978" key="CommitChangelistDialog2/0.24.2560.1416/2560.0.1920.1080@0.24.2560.1416" timestamp="1585451875707" />
     <state x="961" y="514" key="SettingsEditor" timestamp="1585428130023">
       <screen x="0" y="24" width="2560" height="1416" />
     </state>

@@ -137,7 +137,10 @@ func main() {
 
 		// Create file change listener
 		watcher, _ = fsnotify.NewWatcher()
-		defer watcher.Close()
+		defer func() {
+			err := watcher.Close()
+			handle(err)
+		}()
 
 		// Enumerate (walk) the PagesDirectory to find files
 		err := filepath.Walk(PagesDirectory, watchDir)
@@ -169,7 +172,10 @@ func main() {
 		fmt.Println("Done")
 	case "generate":
 		watcher, _ = fsnotify.NewWatcher()
-		defer watcher.Close()
+		defer func() {
+			err := watcher.Close()
+			handle(err)
+		}()
 
 		err := filepath.Walk(PagesDirectory, watchDir)
 		handle(err)
